@@ -6,6 +6,8 @@
 </head>
 
 <body>
+    <h1>Animal game by Shivani Kandikonda</h1>
+    
     <form id="animalForm">
         <label for="hiddenAnimal">The hidden animal type:</label><br>
         <input type="password" id="hiddenAnimal" value="Chicken"><br><br>
@@ -24,7 +26,7 @@
 
             if (hiddenAnimal.toLowerCase() === guessAnimal.toLowerCase()) {
                 correct++;
-                alert("Ruff ruff"); 
+                alert("Ruff ruff");
             } else {
                 wrong++;
                 alert("Grrrr");
@@ -33,7 +35,7 @@
             document.getElementById('result').innerHTML = `Correct Guess!!: ${correct}, Wrong Guess!!: ${wrong}`;
         }
     </script>
-    <h1>Animal game by Shivani Kandikonda</h1>
+
 </body>
 
 </html>
