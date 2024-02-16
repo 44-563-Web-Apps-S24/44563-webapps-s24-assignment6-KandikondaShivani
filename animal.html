@@ -15,7 +15,7 @@
         <input type="text" id="guessAnimal"><br><br>
         <button type="button" onclick="checkAnimal()">Check the guess</button>
     </form>
-    <div id="result"></div>
+    <div id="result">CORRECT/WRONG ??</div>
     <script>
         let correct = 0;
         let wrong = 0;
@@ -24,14 +24,13 @@
             const hiddenAnimal = document.getElementById('hiddenAnimal').value;
             const guessAnimal = document.getElementById('guessAnimal').value;
 
-            if (hiddenAnimal.toLowerCase() === guessAnimal.toLowerCase()) {
-                correct++;
+            if (hiddenAnimal === guessAnimal) {
+                correct = correct + 1;
                 alert("Ruff ruff");
             } else {
-                wrong++;
+                wrong = wrong + 1;
                 alert("Grrrr");
             }
-
             document.getElementById('result').innerHTML = `Correct Guess!!: ${correct}, Wrong Guess!!: ${wrong}`;
         }
     </script>
