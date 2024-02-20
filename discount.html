@@ -18,7 +18,7 @@
     <input type="button" onclick="discount()" value="Show total">
 </form>
 
-<p id="result" style = "font-weight: bold;"></p>
+<p id="result" style = "font-weight:bold;"></p>
 
 <script> 
 function discount(){
@@ -33,8 +33,39 @@ function discount(){
         const calculatedCost = price * count * (1- currentDiscountValue / 100);
         myOutput += currentDiscountValue +  "% is " + calculatedCost.toFixed(1) + "; ";
     }
-    document.getElementById("result").innerHTML = "Totals are: " + myOutput;
+    document.getElementById("result").innerHTML = "Totals are : " + myOutput;
+}
+
+function chooseOp(){
+    let price = parseFloat(document.getElementById("price").value);
+    let discount = parseInt(document.getElementById("count").value);
+    let output = document.getElementById("evaluate");
+    let val =0;
+    let myOutput = "";
+    if (document.getElementById("sum").checked){
+        val = price + discount;
+        myOutput = "Sum of " + price + " and " + discount + " is " + val;
+    }
+    else if(document.getElementById("multiply").checked){
+        val = price * discount;
+        myOutput = "Product of " + price + " and " + discount + " is " + val;
+    }
+    else if(document.getElementById("exponent").checked){
+        val = Math.pow(price, discount);
+        myOutput = "Exponent of " + price + " and " + discount + " is " + val;
+    }
+    document.getElementById("evaluate").innerHTML = myOutput;
 }
 </script>
+<form>
+    <input type="radio" id="sum" name="sum" value="sum">
+    <label for="sum">Sum</label></br><br>
+    <input type="radio" id="multiply" name="multiply" value="multiply">
+    <label for="multiply">Multiply</label></br><br>
+    <input type="radio" id="exponent" name="exponent" value="exponent">
+    <label for="exponent">Exponent</label></br><br>
+    <input type="button" onclick="chooseOp()" value="Get Result">
+</form>
+<p id="evaluate" style="font-weight: bold;">Output is been Displayed</p>
 </body>
 </html> 
