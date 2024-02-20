@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        PACKING PAGE
+    </title>
+</head>
+
+<body>
+    <h1>Shivani Kandikonda packs for a trip.</h1>
+    <form>
+        <input type="checkbox" id="pack_light" value="True">
+        <label for="pack_light">Pack Light</label></br>
+        <input type="checkbox" id="carryOn" value="True">
+        <label for="carryOn">Carry on</label></br>
+        <input type="checkbox" id="tablet" value="False">
+        <label for="tablet">Tablet</label></br>
+        <input type="button" onclick="selectPack()" value="Select for Packing">
+    </form>
+    <p id="result" style="font-weight: bold;">The select for packing details are displayed </p>
+    <script>
+        my_pack = {};
+        function selectPack() {
+            my_pack = {};
+            my_pack.pack_light = document.getElementById("pack_light").checked;
+            my_pack.carryOn = document.getElementById("carryOn").checked;
+            my_pack.tablet = document.getElementById("tablet").checked;
+            document.getElementById("result").innerHTML = JSON.stringify(my_pack);
+        }
+    </script>
+</body>
+</html>
